@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class Weights {
+
+    public static String canMeasureWeight(int W, int X, int Y, int Z) {
+        if (W == X || W == Y || W == Z || W == X + Y || W == Y + Z || W == X + Z || W == X + Y + Z) {
+            return "YES";
+        } else {
+            return "NO";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        for (int i = 0; i < T; i++) {
+            int W = sc.nextInt();
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+            int Z = sc.nextInt();
+            System.out.println(canMeasureWeight(W, X, Y, Z));
+        }
+        sc.close();
+    }
+}
