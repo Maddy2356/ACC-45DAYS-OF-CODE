@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class FillCandies {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int T = sc.nextInt();
+        
+        for (int i = 0; i < T; i++) {
+            int N = sc.nextInt();
+            int K = sc.nextInt();
+            int M = sc.nextInt();
+            
+            int maxCandiesPerBag = K * M;
+            
+            int bagsNeeded = (N + maxCandiesPerBag - 1) / maxCandiesPerBag; // This is equivalent to ceiling(N / maxCandiesPerBag)
+            
+            System.out.println(bagsNeeded);
+        }
+        
+        sc.close();
+    }
+}
