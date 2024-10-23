@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class ChefAndBoss {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt(); // number of test cases
+
+        for (int i = 0; i < T; i++) {
+            int H = scanner.nextInt(); // health of boss
+            int X = scanner.nextInt(); // damage per normal attack
+            int Y = scanner.nextInt(); // damage per special attack
+
+            int normalAttacks = (H + X - 1) / X; // ceiling of (H/X)
+         
+            int specialAndNormalAttacks = (H - Y > 0) ? 1 + (H - Y + X - 1) / X : 1;
+
+            int minAttacks = Math.min(normalAttacks, specialAndNormalAttacks);
+            
+            System.out.println(minAttacks);
+        }
+
+        scanner.close();
+    }
+}
