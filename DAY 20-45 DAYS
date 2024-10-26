@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class DraculaEats {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+   
+        for (int t = 0; t < T; t++) {
+            int N = sc.nextInt();
+         
+            int countTuesdays = 0;
+          
+            for (int i = 2; i <= N; i += 7) {
+                countTuesdays++;
+            }
+       
+            System.out.println(countTuesdays);
+        }
+
+        sc.close();
+    }
+}
