@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class ContestProblems {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int T = sc.nextInt();
+        
+        for (int t = 0; t < T; t++) {
+            int N = sc.nextInt();
+            sc.nextLine(); 
+            
+            String[] contestCodes = sc.nextLine().split(" ");
+            
+            int start38Count = 0;
+            int ltime108Count = 0;
+         
+            for (String code : contestCodes) {
+                if (code.equals("START38")) {
+                    start38Count++;
+                } else if (code.equals("LTIME108")) {
+                    ltime108Count++;
+                }
+            }
+         
+            System.out.println(start38Count + " " + ltime108Count);
+        }
+ 
+        sc.close();
+    }
+}
