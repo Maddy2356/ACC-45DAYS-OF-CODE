@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+class BinaryBattles {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+     
+        int T = sc.nextInt();
+  
+        for (int t = 0; t < T; t++) {
+            int N = sc.nextInt(); 
+            int A = sc.nextInt(); 
+            int B = sc.nextInt();  
+          
+            int rounds = (int) (Math.log(N) / Math.log(2));
+         
+            int totalTime = (rounds * A) + ((rounds - 1) * B);
+         
+            System.out.println(totalTime);
+        }
+        
+        sc.close();
+    }
+}
