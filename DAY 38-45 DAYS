@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class AttackOfQueen {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+
+            int verticalMoves = (N - 1);
+            int horizontalMoves = (N - 1);
+
+            int topLeftDiagonal = Math.min(X - 1, Y - 1);
+            int topRightDiagonal = Math.min(X - 1, N - Y);
+            int bottomLeftDiagonal = Math.min(N - X, Y - 1);
+            int bottomRightDiagonal = Math.min(N - X, N - Y);
+
+            int totalAttackableCells = verticalMoves + horizontalMoves +
+                    topLeftDiagonal + topRightDiagonal +
+                    bottomLeftDiagonal + bottomRightDiagonal;
+
+            System.out.println(totalAttackableCells);
+        }
+
+        sc.close();
+    }
+}
