@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Infernos {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            int[] health = new int[N];
+
+            for (int i = 0; i < N; i++) {
+                health[i] = sc.nextInt();
+            }
+
+            int singleTargetTime = 0;
+            for (int hp : health) {
+                singleTargetTime += Math.ceil((double) hp / X);
+            }
+
+            int maxHealth = 0;
+            for (int hp : health) {
+                if (hp > maxHealth) {
+                    maxHealth = hp;
+                }
+            }
+            int multiTargetTime = maxHealth;
+
+            int minTime = Math.min(singleTargetTime, multiTargetTime);
+            System.out.println(minTime);
+        }
+
+        sc.close();
+    }
+}
